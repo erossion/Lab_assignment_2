@@ -1,0 +1,77 @@
+﻿@model Lab_10.ViewModels.TaskIndexViewModel
+@using PagedList.Mvc
+
+
+@{
+    ViewBag.Title = "Tasks";
+}
+
+    @using (Html.BeginForm("Index", "Tasks", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+    {
+        <h2>Index</h2>
+        <div class="form-group">
+            @Html.TextBox("Search", null, new{@class = "form-control",@placeholder = "Search Tasks"})
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    }
+<p>
+    @(String.IsNullOrWhiteSpace(Model.Search) ? "Showing all" : "You search for " +Model.Search + " found")
+    @Model.Tasks.TotalItemCount products
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm("Index", "Tasks", FormMethod.Get))
+    {
+        <label>Filter by team:</label>
+        @*Html.DropDownList("Team", "All")*@
+        @Html.DropDownListFor(vm => vm.Team, Model.CatFilterItems, "All");
+        <label>Sort By:</label>
+        @Html.DropDownListFor(vm => vm.SortBy, new SelectList(Model.Sorts, "Value",
+       "Key"), "Default")
+        <input type="submit" value="Filter" />
+        <input type="hidden" name="Search" id="Search" value="@Model.Search" />
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tasks.First().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tasks.First().Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Tasks)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    Page @(Model.Tasks.PageCount < Model.Tasks.PageNumber ? 0 :Model.Tasks.PageNumber) of @Model.Tasks.PageCount
+    @Html.PagedListPager(Model.Tasks, page => Url.Action("Index", new{category = @Model.Team,Search = @Model.Search,sortBy = @Model.SortBy,page}))
+</div>
