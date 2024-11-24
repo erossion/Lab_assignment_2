@@ -8,7 +8,7 @@
 
     @using (Html.BeginForm("Index", "Tasks", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
     {
-        <h2>Index</h2>
+        <h2>Tasks</h2>
         <div class="form-group">
             @Html.TextBox("Search", null, new{@class = "form-control",@placeholder = "Search Tasks"})
             <button type="submit" class="btn btn-default">Submit</button>
