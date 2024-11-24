@@ -1,33 +1,30 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+    <section class="nrow" aria-labelledby="aspnetTitle">
+        <h1 id="title">Task management system</h1>
+        <p class="lead">A task management system is a system that uses ASP.NET to enable individuals or teams to receive or publish tasks.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more about ASP.NET &raquo;</a></p>
     </section>
 
     <div class="row">
         <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
+            <h2 id="gettingStartedTitle">Getting tasks</h2>
             <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
+                Tasks are the core elements in the system and represent the work items that need to be completed. Each task contains a detailed description, a deadline for completion, the priority of the task, and the person responsible. Tasks can be assigned to teams, and team members can pick up subtasks or specific work within them. Task completion status is updated through progress tracking and feedback mechanisms to ensure that tasks are completed on time and efficiently.
             </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <p><a class="btn btn-outline-dark" href="https://localhost:44388/Tasks">Learn more &raquo;</a></p>
         </section>
         <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            <h2 id="librariesTitle">Getting teams</h2>
+            <p>A team is a cooperative unit composed of a group of members who are responsible for receiving and completing tasks. Each team has a clear goal and expertise, and members need to be assigned according to their own skills and task needs. Teams can receive tasks, discuss task assignments, and collaborate to complete tasks. Team members collaborate and support each other to achieve common mission goals. Individuals need to join a team in order to take on tasks within the team.</p>
+            <p><a class="btn btn-outline-dark" href="https://localhost:44388/Teams">Learn more &raquo;</a></p>
         </section>
         <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <h2 id="hostingTitle">Getting people</h2>
+            <p>Individuals are users of the system, either as part of a team or individually registered to participate. Individuals need to join the team in the system before they can participate in the task allocation and completion of the team. Individuals choose to join the most suitable team based on their own skills, interests and experience, and work with the team to complete the task. Each individual can view the progress of the tasks of the team he joins and participate in the execution and feedback of the tasks.</p>
+            <p><a class="btn btn-outline-dark" href="https://localhost:44388/People">Learn more &raquo;</a></p>
         </section>
     </div>
 </main>

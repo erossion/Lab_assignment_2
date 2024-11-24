@@ -71,7 +71,7 @@ namespace Lab_10.Controllers
                  {"Status low to high", "status_lowest" },
                  {"Status high to low", "status_highest" }
              };
-            const int PageItems = 20;
+            const int PageItems = 3;
             int currentPage = (page ?? 1);
             viewModel.Tasks = tasks.ToPagedList(currentPage, PageItems);
             return View(viewModel);

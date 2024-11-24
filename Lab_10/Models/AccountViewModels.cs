@@ -6,7 +6,7 @@ namespace Lab_10.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "电子邮件")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
 
@@ -29,11 +29,11 @@ namespace Lab_10.Models
         public string Provider { get; set; }
 
         [Required]
-        [Display(Name = "代码")]
+        [Display(Name = "Code")]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "记住此浏览器?")]
+        [Display(Name = "Remember this browser?")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
@@ -42,23 +42,23 @@ namespace Lab_10.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "电子邮件")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "电子邮件")]
+        [Display(Name = "E-mail")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "密码")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "记住我?")]
+        [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
 
@@ -66,18 +66,18 @@ namespace Lab_10.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "电子邮件")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "{0} 必须至少包含 {2} 个字符。", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} Must contain at least {2} characters.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "密码")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "确认密码")]
-        [Compare("Password", ErrorMessage = "密码和确认密码不匹配。")]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password does not match the confirmation password.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -85,18 +85,18 @@ namespace Lab_10.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "电子邮件")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "{0} 必须至少包含 {2} 个字符。", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} Must contain at least {2} characters.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "密码")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "确认密码")]
-        [Compare("Password", ErrorMessage = "密码和确认密码不匹配。")]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password does not match the confirmation password.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -106,7 +106,7 @@ namespace Lab_10.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "电子邮件")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
 }

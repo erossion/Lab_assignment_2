@@ -17,7 +17,7 @@
 <p>
     @(String.IsNullOrWhiteSpace(Model.Search) ? "Showing all" : "You search for " +Model.Search + " found")
     @Model.Tasks.TotalItemCount products
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn-create" })
     @using (Html.BeginForm("Index", "Tasks", FormMethod.Get))
     {
         <label>Filter by team:</label>
@@ -71,7 +71,7 @@
     }
 
 </table>
-<div>
+<div class="paged-list-container">
     Page @(Model.Tasks.PageCount < Model.Tasks.PageNumber ? 0 :Model.Tasks.PageNumber) of @Model.Tasks.PageCount
     @Html.PagedListPager(Model.Tasks, page => Url.Action("Index", new{category = @Model.Team,Search = @Model.Search,sortBy = @Model.SortBy,page}))
 </div>
